@@ -1,6 +1,7 @@
 package com.ncapas.parcial2.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Data
@@ -23,17 +24,18 @@ public class Books {
     @Column(name = "author" , nullable = false)
     private String author;
 
-    @Column(name = "isbn" , nullable = false, unique = true)
+    @Size(min = 13 , max = 13)
+    @Column(name = "isbn" , nullable = false, unique = true, length = 13)
     private String isbn;
 
     @Column(name = "publication_year" , nullable = false)
-    private Integer publicationYear;
+    private int publicationYear;
 
-    @Column(name = "language" , nullable = false)
+    @Column(name = "language")
     private String language;
 
     @Column(name = "pages" , nullable = false)
-    private Integer pages;
+    private int pages;
 
     @Column(name = "genre" , nullable = false)
     private String genre;
