@@ -34,11 +34,20 @@ public class BookServices {
         booksRepository.deleteById(Id);
     }
 
-    public Books findBookByIsbn(String isbn){
-        return booksRepository.findByIsbn(isbn).orElse(null);
+    public BooksDTO findBookByIsbn(String isbn){
+        Optional<Books> optionalBook = booksRepository.findByIsbn(isbn);
+        if (optionalBook.isEmpty()){
+            throw new RuntimeException("Book not found");
+        }
+        return new BooksDTO(optionalBook.get().getIsbn());
+
     }
-    public  Books findBookById(Integer Id){
-        return booksRepository.findById(Id).orElse(null);
+
+   public  Books findBookByLanguage(String language){
+        return booksRepository.findByAuthor(language).orElse(null);
+    }
+    public  Books findBookByGenre(String genre){
+        return booksRepository.findByAuthor(genre).orElse(null);
     }
 
 
