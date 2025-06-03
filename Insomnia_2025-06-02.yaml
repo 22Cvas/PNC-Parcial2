@@ -1,0 +1,114 @@
+type: collection.insomnia.rest/5.0
+name: Parcial 2
+meta:
+  id: wrk_24ad2c79ff8d4bce903739f2c65e3232
+  created: 1748902617451
+  modified: 1748902617451
+collection:
+  - url: localhost:8080/books/created
+    name: New Request
+    meta:
+      id: req_3606f403b8ed4a068ff49ced72ce6e65
+      created: 1748912746433
+      modified: 1748917670431
+      isPrivate: false
+      sortKey: -1748912746433
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title":"las aventuras de juan",
+        	"author":"yisus",
+        	"isbn":"1234567890154",
+        	"publicationYear":"2015",
+        	"language":"espanol",
+        	"pages":"100",
+        	"genre":"Accion"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/books/delete/1
+    name: New Request
+    meta:
+      id: req_308a3537b59e49e3b1411d8187c89f9e
+      created: 1748914071998
+      modified: 1748914263196
+      isPrivate: false
+      sortKey: -1748914071998
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/books/get/1234567890124
+    name: New Request
+    meta:
+      id: req_0f4fbd53cd084b1e819d757fa8c4b226
+      created: 1748914103319
+      modified: 1748917638906
+      isPrivate: false
+      sortKey: -1748914103319
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/books/get/author=yisus
+    name: New Request
+    meta:
+      id: req_8cffa02837eb42ea844e13e8cda4e321
+      created: 1748917080134
+      modified: 1748917119311
+      isPrivate: false
+      sortKey: -1748917080134
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b7dc3d9a22e1faa0f585947029dba9de8160012a
+    created: 1748902618164
+    modified: 1748902618164
+environments:
+  name: Base Environment
+  meta:
+    id: env_b7dc3d9a22e1faa0f585947029dba9de8160012a
+    created: 1748902618159
+    modified: 1748902618159
+    isPrivate: false
